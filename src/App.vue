@@ -5,11 +5,28 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <header>
     <div class="wrapper">
-      <nav>
+        <!-- component -->
+        <nav class="relative select-none bg-black lg:flex lg:items-stretch w-full">
+          <div class="flex flex-no-shrink items-stretch h-12">
+            <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Tailwind</a>
+            <a href="#" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Css</a>
+            <button class="block lg:hidden cursor-pointer ml-auto relative w-12 h-12 p-4">
+              <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"/></svg>
+            </button>
+          </div>
+          <div class="lg:flex lg:items-stretch lg:flex-no-shrink lg:flex-grow">
+            <div class="lg:flex lg:items-stretch lg:justify-end ml-auto">
+              <RouterLink :to="{name:'login'}" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Login</RouterLink>
+              <RouterLink :to="{name:'register'}" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Register</RouterLink>
+              <RouterLink to="/" class="flex-no-grow flex-no-shrink relative py-2 px-4 leading-normal text-white no-underline flex items-center hover:bg-grey-dark">Home</RouterLink>
+            </div>
+          </div>
         <RouterLink to="/">Home</RouterLink>|
         <RouterLink :to="{ name: 'login' }">Login</RouterLink>|
         <RouterLink :to="{ name: 'register' }">Register</RouterLink>
       </nav>
+      
     </div>
   </header>
 
@@ -17,65 +34,12 @@ import { RouterLink, RouterView } from "vue-router";
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
+  background-color: black;
 }
 
-nav a.router-link-exact-active {
-  color: var(--color-text);
+h1 {
+  color:red;
 }
 
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
 </style>

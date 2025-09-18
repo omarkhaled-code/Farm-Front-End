@@ -3,7 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import Register from "../views/Register.vue";
 import Login from "../views/Login.vue";
 
-import { useAuthStore } from "@/stores/auth";
+// import { useAuthStore } from "@/stores/auth";
 
 const routes = [
   {
@@ -28,13 +28,13 @@ const router = createRouter({
   routes,
 });
 
-router.beforeEach((to, from, next) => {
-  const auth = useAuthStore();
-  if (to.meta.requiresAuth && !auth.isLoggedIn) {
-    next("/login");
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   const auth = useAuthStore();
+//   if (to.meta.requiresAuth && !auth.isLoggedIn) {
+//     next("/login");
+//   } else {
+//     next();
+//   }
+// });
 
 export default router;
